@@ -1,0 +1,28 @@
+<html><head>
+<title>online voting system</title></head>
+<h1>online voting</h1>
+<p>An online voting system is a digital platform that enables voters to cast their ballots via the internet. 
+It is designed to simplify the voting process, increase voter participation, and enhance efficiency in elections.</p>
+  <form id="voteForm">
+    <p>Select your candidate:</p>
+    <input type="radio" name="candidate" value="Candidate A" required> Candidate A<br>
+    <input type="radio" name="candidate" value="Candidate B"> Candidate B<br>
+    <input type="radio" name="candidate" value="Candidate C"> Candidate C<br><br>
+
+    <input type="submit" value="Submit Vote">
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("voteForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop form from refreshing the page
+
+      const selected = document.querySelector('input[name="candidate"]:checked').value;
+      document.getElementById("result").innerText = "You voted for: " + selected;
+    });
+  </script>
+</body>
+</html>
+
+
